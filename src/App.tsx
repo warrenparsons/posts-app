@@ -2,12 +2,19 @@ import { useState, useEffect } from "react";
 import axios from 'axios';
 import "./App.css";
 
+// Define the Post type
+interface Post {
+  id: number;
+  title: string;
+  body: string;
+}
+
 function App() {
-  const [posts, setPosts] = useState([]);
-  const [error, setError] = useState(null);
+  const [posts, setPosts] = useState<Post[]>([]);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    axios.get("https://jsonplaceholder.typicode.com/posts")
+    axios.get<Post[]>('https://jsonplaceholder.typicode.com/posts')
       .then(response => setPosts(response.data))
       .catch(err => setError(err.message));
   }, []);
