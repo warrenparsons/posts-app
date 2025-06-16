@@ -12,7 +12,6 @@ ul {
 .post-item {
   border-bottom: 1px solid #ccc;
   padding: 10px 0;
-  cursor: pointer;
 }
 
 h3 {
@@ -29,6 +28,14 @@ h3 {
 }
 
 @media (max-width: 767px) {
+  .post-item {
+    cursor: pointer;
+
+    &:has(.collapsed) h3 {
+      margin: 0;
+    }
+  }
+
   .post-body.collapsed {
     display: none;
   }
