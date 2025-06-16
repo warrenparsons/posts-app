@@ -9,11 +9,31 @@ ul {
   padding: 0;
 }
 
-li {
+.post-item {
   border-bottom: 1px solid #ccc;
   padding: 10px 0;
+  cursor: pointer;
 }
 
 h3 {
   margin: 0 0 10px;
+  text-transform: capitalize;
+}
+
+.post-body {
+  margin: 0;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+@media (max-width: 767px) {
+  .post-body.collapsed {
+    display: none;
+  }
+
+  .post-body.expanded {
+    display: block;
+  }
 }
