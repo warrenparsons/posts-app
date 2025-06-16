@@ -20,10 +20,10 @@ function App() {
   return (
     <div className="App">
       <h1>Posts</h1>
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && <p style={{ color: 'red' }}>{error}</p>}
       {posts.length > 0 ? (
         <ul>
-          {posts.map((post) => (
+          {posts.map(post => (
             <li key={post.id}>
               <h3>{post.title}</h3>
               <p>{post.body}</p>
